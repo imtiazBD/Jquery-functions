@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JQuery Functions</title>
+  <link rel="stylesheet" type="text/css" href="files/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="files/css/style.css">
+</head>
+<body>
+<div class="container">
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form class="form-horizontal" method="" action="">
+
+          <div class="form-group">
+            <label class="col-md-4 control-label"> Disable Cut Field  </label>
+            <div class="col-md-6">
+              <input type="email" id="cut" class="form-control" name="email" value="" placeholder="Disable (cut)">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-md-4 control-label">Disable copy Field </label>
+            <div class="col-md-6">
+              <input type="email" id="copy" class="form-control" name="email" value="" placeholder="Disable ( copy )">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-md-4 control-label">Disable paste Field </label>
+            <div class="col-md-6">
+              <input type="email" id="paste" class="form-control" name="email" value="" placeholder="Disable (paste)">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Password</label>
+            <div class="col-md-6">
+              <input id="password-field" type="password" class="form-control" name="password" value="secret">
+              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript" src="files/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="files/js/jquery.js"></script>
+
+<script type="text/javascript">
+
+
+  
+    $(".toggle-password").click(function() {
+       
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") 
+        {
+            input.attr("type", "text");
+        }
+        else
+         {
+            input.attr("type", "password");
+         }
+
+      });
+
+
+     $('#cut').on("cut",function(e) {
+        e.preventDefault();
+     });
+  
+       $('#copy').on("copy",function(e) {
+        e.preventDefault();
+     });
+
+     $('#paste').on("paste",function(e) {
+        e.preventDefault();
+     }); 
+
+
+
+
+</script>
+</body>
+</html>
